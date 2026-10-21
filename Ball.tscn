@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c7vutlsu3rgs5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d53fb"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydlk0"]
+size = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_pa54t"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3ca2r"]
+gradient = SubResource("Gradient_pa54t")
+width = 1
+height = 1
+
+[node name="Ball" type="RigidBody2D" unique_id=1446641910]
+physics_material_override = SubResource("PhysicsMaterial_d53fb")
+linear_damp_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=760107068]
+texture_filter = 1
+shape = SubResource("RectangleShape2D_ydlk0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=326418963]
+texture = SubResource("GradientTexture2D_3ca2r")

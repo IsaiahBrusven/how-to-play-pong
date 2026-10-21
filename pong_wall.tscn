@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://hp3lpsim4adi"]
+
+[sub_resource type="Gradient" id="Gradient_jxu40"]
+offsets = PackedFloat32Array(0.8647887, 0.9698795, 0.9879518, 0.9939759, 0.9971831, 1)
+colors = PackedColorArray(0.06801245, 0.06801245, 0.06801245, 1, 0, 0, 0, 1, 0.06801245, 0.06801245, 0.06801245, 1, 0.06801245, 0.06801245, 0.06801245, 1, 0.06801245, 0.06801245, 0.06801245, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3ca2r"]
+gradient = SubResource("Gradient_jxu40")
+width = 1
+height = 1
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ydlk0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swqrw"]
+size = Vector2(1, 1)
+
+[node name="PongWall" type="Node2D" unique_id=1668899876]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1437494370]
+texture = SubResource("GradientTexture2D_3ca2r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=1921203585]
+physics_material_override = SubResource("PhysicsMaterial_ydlk0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=1909978978]
+visible = false
+shape = SubResource("RectangleShape2D_swqrw")

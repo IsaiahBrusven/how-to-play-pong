@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dgcoqjlftmfu3"]
+
+[ext_resource type="Script" uid="uid://bgdmpy1hapsbv" path="res://player_paddle_2d.gd" id="1_ty45r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46ku8"]
+size = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_ty45r"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sf3v6"]
+gradient = SubResource("Gradient_ty45r")
+width = 1
+height = 1
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2067279784]
+script = ExtResource("1_ty45r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1978044288]
+texture_filter = 1
+shape = SubResource("RectangleShape2D_46ku8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1156214699]
+texture = SubResource("GradientTexture2D_sf3v6")

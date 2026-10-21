@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cigldfy0riwts"]
+
+[ext_resource type="PackedScene" uid="uid://c7vutlsu3rgs5" path="res://Ball.tscn" id="1_e27h2"]
+[ext_resource type="PackedScene" uid="uid://hp3lpsim4adi" path="res://pong_wall.tscn" id="1_xuw5q"]
+[ext_resource type="Script" uid="uid://dmf44fkhgveff" path="res://ball.gd" id="3_d53fb"]
+[ext_resource type="PackedScene" uid="uid://dgcoqjlftmfu3" path="res://player_paddle2D.tscn" id="3_revwx"]
+
+[sub_resource type="Gradient" id="Gradient_ydlk0"]
+colors = PackedColorArray(0.22670749, 0.22670749, 0.22670746, 1, 0.23031491, 0.23031494, 0.23031494, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j2l4j"]
+gradient = SubResource("Gradient_ydlk0")
+width = 1152
+height = 648
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_okb18"]
+friction = 0.0
+bounce = 1.0
+
+[node name="Game" type="Node2D" unique_id=1494512923]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=111528418]
+z_index = -1
+position = Vector2(576, 324)
+texture = SubResource("GradientTexture2D_j2l4j")
+
+[node name="PongWallNorth" parent="." unique_id=1668899876 instance=ExtResource("1_xuw5q")]
+position = Vector2(576, 50)
+scale = Vector2(1152, 100)
+
+[node name="PongWallSouth" parent="." unique_id=1691843219 instance=ExtResource("1_xuw5q")]
+position = Vector2(576, 596)
+scale = Vector2(1152, 100)
+
+[node name="Ball" parent="." unique_id=1446641910 instance=ExtResource("1_e27h2")]
+position = Vector2(576, 324)
+physics_material_override = SubResource("PhysicsMaterial_okb18")
+script = ExtResource("3_d53fb")
+
+[node name="CollisionShape2D" parent="Ball" index="0" unique_id=760107068]
+scale = Vector2(20, 20)
+
+[node name="Sprite2D" parent="Ball" index="1" unique_id=326418963]
+scale = Vector2(20, 20)
+
+[node name="PlayerPaddle" parent="." unique_id=2032838217 instance=ExtResource("3_revwx")]
+position = Vector2(50, 324)
+
+[node name="CollisionShape2D" parent="PlayerPaddle" index="0" unique_id=1978044288]
+scale = Vector2(15, 100)
+
+[node name="Sprite2D" parent="PlayerPaddle" index="1" unique_id=1156214699]
+scale = Vector2(15, 100)
+
+[node name="CPUPaddle" parent="." unique_id=1506427222 instance=ExtResource("3_revwx")]
+position = Vector2(1102, 324)
+
+[node name="CollisionShape2D" parent="CPUPaddle" index="0" unique_id=1978044288]
+scale = Vector2(15, 100)
+
+[node name="Sprite2D" parent="CPUPaddle" index="1" unique_id=1156214699]
+scale = Vector2(15, 100)
+
+[editable path="Ball"]
+[editable path="PlayerPaddle"]
+[editable path="CPUPaddle"]
