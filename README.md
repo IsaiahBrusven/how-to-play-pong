@@ -7,4 +7,5 @@ Things I'm planning to add
 6. Pong but it is 4d //This is possible but i don't think it will be fun so I don't think i'm going to do this
 7. Pong but it is a roguelike
 8. Pong but it is space invaders
-9. Pong but it is spinning 
+9. Pong but it is spinning
+10. Pong with powerups
